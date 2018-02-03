@@ -1,0 +1,258 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Above is CSS reset
+*/
+
+
+* {
+font-family: 'Lato';
+}
+
+header, .leading-bigtext {
+font-family: 'Berkshire Swash';
+}
+
+@media (min-width: 700px) {
+ .leading {
+    display: flex;
+    align-items: center;
+  }
+
+
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 10px;
+  font-size: 2em;
+  color:#333;
+  background-color: white;
+  border-bottom: 1px solid grey;
+
+
+}
+
+.logo {
+  height: 50px;
+  margin-right: 20px;
+  animation: square-to-circle 2s 1s infinite cubic-bezier(1,.015,.295,1.225) alternate;  
+}
+
+.logo-no-animation {
+  height: 50px;
+  margin-right: -5px;
+}
+
+@keyframes square-to-circle {
+  0%{
+  	border-radius:0 0 0 0;
+
+  	transform:rotate(0deg);
+  }
+  25%{
+  	border-radius:50% 0 0 0;
+
+  	 transform:rotate(45deg);
+  }
+  50%{
+  	border-radius:50% 50% 0 0;
+  
+  	transform:rotate(90deg);
+  }
+  75%{
+  	border-radius:50% 50% 50% 0;
+ 
+  	transform:rotate(135deg);
+  }
+  100%{
+  	border-radius:50%;
+ 
+  	transform:rotate(180deg);
+  }
+}
+
+.leading {
+  height: auto;
+  margin-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1480457330430-f47a04086de9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3c59fb32eb0fe9eef5e0834855ffed5d&auto=format&fit=crop&w=1951&q=80') center #333 no-repeat;
+  background-size: cover;
+  color: white;
+  text-shadow: 0px 0px 5px #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+
+}
+
+.leading-bigtext {
+  margin-right: 60px;
+  font-weight: bold;
+  font-size: 20vw;
+}
+
+@media (min-width: 700px) {
+  .leading-bigtext {
+    font-size: 140px;
+  }
+
+}
+
+.leading-text {
+margin: 0 auto;
+  max-width: 900px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  text-align: center;
+  
+}
+
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-auto-rows: minmax(200px, auto);
+  /*grid-gap: 20px;*/
+	object-fit: cover;
+  grid-gap: 10px;
+
+}
+
+.cards {
+  max-width: 960px;
+  margin: 0 auto 20px;
+  padding: 5px;
+}
+
+
+
+article {
+  position: relative;
+  overflow: hidden;
+
+}
+
+article:hover .article-title {
+   transform: translateY(0);
+   opacity: 1;
+   box-sizing: border-box; /* <<<<< This saved my life. It stopped the
+   image text description from being chopped off. For some reason the padding
+   didn't seem to work. Border-box saved it*/
+}
+
+.article-img {
+  display: block;
+  height: 200px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: 0 -25px;
+  box-sizing: border-box;
+}
+
+
+#smallertext {
+ font-size: 0.9em;
+}
+
+
+.article-title {
+
+color: white;
+font-size: 1em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0,0,0, .65);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transform: translateY(100%);
+  opacity: 0;
+  grid-gap: 20px;
+
+
+}
+
+.audioplayer, .link, footer {
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.button {
+    background-color: teal;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.button:hover{
+text-decoration: underline;
+}
+
+#pic4, #pic6 {
+  object-position: 0 0px;
+}
+ #pic2 {
+  object-position: 0 -100px;
+ }
